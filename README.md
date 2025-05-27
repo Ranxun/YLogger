@@ -39,26 +39,26 @@ YLogger/
 │   ├── LoggerPanel.prefab          # LoggerPanel 的 UGUI 预制体
 │   └── LoggerSettings.asset        # 配置实例文件（放置在 Resources 以供运行时加载）
 
-📌 注意事项
+##📌 注意事项
 - 文件日志写入路径为：Application.persistentDataPath/Logs/
 - 日志文件每日生成，按等级命名（如：log_2025-05-27.log）
 - LoggerSettings.asset 为全局控制开关，请勿遗漏
 
-🛠️ 拓展建议
+##🛠️ 拓展建议
 - 日志上传可自定义接入接口（LogUploader）
 - 可接入性能分析插件（如帧率下降函数采集）
 - 支持导出完整压缩包 + 自定义报错反馈信息
 
-运行时日志面板
+##运行时日志面板
 - LoggerPanel 为一个可拖拽的 UI 面板，运行时显示日志等级与上传按钮
 - 仅在 UNITY_EDITOR 或 DEVELOPMENT_BUILD 下启用
 - 日志位置可本地持久保存，下次运行时自动复位
 
-编辑器功能
+##编辑器功能
 - 日志配置窗口：菜单栏 Tools > 日志配置
 - 日志文件查看器：菜单栏 Tools > 日志查看器
 
-使用日志 API
+##使用日志 API
 Logger.Log("普通日志");
 Logger.LogWarning("警告信息");
 Logger.LogError("错误信息");
