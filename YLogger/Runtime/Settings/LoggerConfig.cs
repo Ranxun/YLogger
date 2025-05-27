@@ -1,3 +1,4 @@
+using UnityEngine;
 namespace YLogger
 {
     public static class LoggerConfig
