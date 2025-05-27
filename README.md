@@ -29,7 +29,6 @@ YLogger/
 │       ├── LogCompressor.cs      # 可选的压缩工具类
 │       ├── CrashLogHelper.cs     # 捕获崩溃信息的辅助类
 │       ├── MultiLogWriter.cs     # 多级别日志写入器（多线程）
-│       ├── LogInitializer.cs     # 自动初始化 Logger 的组件
 │       └── LoggerPanel.cs        # UGUI 日志 UI 面板
 │   └── Settings/
 │       ├── LoggerConfig.cs       # 可序列化配置类
