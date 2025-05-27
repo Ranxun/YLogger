@@ -1,94 +1,71 @@
-🌐 [中文文档](README.md)
-YLogger Logging System
+# YLogger - Unity In-Game Logging System
 
-YLogger is a lightweight logging and viewing solution for Unity projects. It supports runtime file logging, in-game and editor log viewing, log uploading, encryption, and configuration.
+🌐 [中文文档 (Chinese)](README.md)
 
-✨ Features
+## Introduction
 
-✅ Multi-level log recording (Log, Warning, Error, Exception)
+YLogger is a lightweight and customizable in-game logging system for Unity. It provides file-based logs, in-game UI log viewer, configurable logging levels, and uploading support.
 
-✅ Supports writing to local files (daily rotation by level)
+---
 
-✅ Configurable output to console, file, encryption toggle, auto-clean
+## Features
 
-✅ Supports log uploading and compression
+* ✅ **Multi-level Logging:** Supports Log, Warning, Error, Exception, Assert.
+* ✅ **Output Channels:** Console and file logging can be enabled/disabled independently.
+* ✅ **File Management:** Logs are saved daily by level, and support auto-cleaning after 7 days.
+* ✅ **In-Game Viewer:** UI panel for runtime log viewing, filtering, paging, and uploading.
+* ✅ **Editor Tools:** Includes an editor viewer and configuration window.
+* ✅ **Optional Encryption:** Simple Base64 encoding for log content.
 
-✅ In-game LoggerPanel for viewing and uploading logs
+---
 
-✅ Unity Editor tools: settings window & log viewer
+## Directory Structure
 
-📁 Directory Structure
-
+```
 YLogger/
-├── Editor/                          # Editor-only tools
-│   ├── LoggerSettingsWindow.cs     # Settings UI for logging configuration
-│   └── LogViewerWindow.cs          # Editor log file viewer
-├── Runtime/                         # Core runtime logic and config
-│   ├── Scripts/                     # Logging functionality
-│   │   ├── Logger.cs               # Logging interface
-│   │   ├── LogUploader.cs          # Upload logic (extendable)
-│   │   ├── LogCompressor.cs        # Compression logic
-│   │   ├── CrashLogHelper.cs       # Crash log monitor
-│   │   ├── MultiLogWriter.cs       # Multithreaded file writer
-│   │   ├── LogInitializer.cs       # Initialization logic
-│   │   └── LoggerPanel.cs          # In-game UI panel
-│   └── Settings/                   # ScriptableObject-based settings
-│       ├── LoggerConfig.cs         # SO class definition
-│       └── LoggerSettings.cs       # Loader and accessor
+├── Editor/                     # Editor tools
+│   ├── LoggerSettingsWindow.cs
+│   └── LogViewerWindow.cs
+├── Runtime/                    # Runtime components
+│   ├── Scripts/                # Logging logic
+│   │   ├── Logger.cs
+│   │   ├── LogUploader.cs
+│   │   ├── LogCompressor.cs
+│   │   ├── CrashLogHelper.cs
+│   │   ├── MultiLogWriter.cs
+│   │   ├── LogInitializer.cs
+│   │   └── LoggerPanel.cs
+│   └── Settings/              # ScriptableObject assets
+│       ├── LoggerConfig.cs
+│       └── LoggerSettings.cs
 ├── Resources/
-│   ├── LoggerPanel.prefab          # UI prefab for LoggerPanel
-│   └── LoggerSettings.asset        # Logger configuration asset
+│   ├── LoggerPanel.prefab     # In-game log panel prefab
+│   └── LoggerSettings.asset   # Serialized user configuration
+```
 
-⚙️ How to Use
+---
 
-Initialization
+## Usage Notes
 
-Call during your game startup:
+* Only enable encryption in production if security is needed.
+* Auto-cleaning and uploading should be toggled according to your release process.
+* Logs are stored under `Application.persistentDataPath/Logs/`.
 
-LogInitializer.Initialize();
+---
 
-This will load LoggerSettings.asset from Resources and apply config.
+## Extension Ideas
 
-Logging API
+* ⚡ Add FPS drops and slow method tracing.
+* 🔹 Integrate crash reporting platforms (e.g., Backtrace, Sentry).
+* 💡 Add filters, search, and advanced pagination to the UI.
+* ✉ Export logs via email or clipboard for easier sharing.
 
-Logger.Log("Info message");
-Logger.LogWarning("Warning message");
-Logger.LogError("Error message");
-Logger.LogException(new Exception("Exception message"));
+---
 
-Editor Tools
+## License
 
-Logger Settings Window: Tools > Logger Settings
+MIT License. Free to use and modify in personal or commercial Unity projects.
 
-Log Viewer: Tools > Log Viewer
+---
 
-Runtime LoggerPanel
-
-A draggable UI panel shown in Development/Editor builds
-
-Toggle display by clicking the Log button
-
-Remembers its screen position across runs
-
-Supports viewing and uploading logs by severity level
-
-🛠️ Extension Ideas
-
-Custom upload endpoint integration
-
-Add performance diagnostics (e.g. slow function tracking)
-
-Export ZIP + user report data for QA
-
-📌 Notes
-
-Log file path: Application.persistentDataPath/Logs/
-
-One file per day and level: log_2025-05-27.log, etc.
-
-LoggerSettings.asset controls all toggles globally
-
-📮 Feedback & Support
-
-Feel free to submit issues or ideas for improvement!
-
+Made with ❤⃣ for Unity Developers.
