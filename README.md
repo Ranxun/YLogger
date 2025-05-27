@@ -1,3 +1,4 @@
+🌐 [English README](README.en.md)
 # YLogger 日志系统
 
 YLogger 是一个轻量、高扩展性的 Unity 内置日志采集系统，支持本地日志分类写入、UI 日志查看、日志上传、崩溃记录等功能，适用于开发、测试与线上调试。
