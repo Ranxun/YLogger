@@ -33,7 +33,6 @@ YLogger/
 │   │   ├── LogCompressor.cs
 │   │   ├── CrashLogHelper.cs
 │   │   ├── MultiLogWriter.cs
-│   │   ├── LogInitializer.cs
 │   │   └── LoggerPanel.cs
 │   └── Settings/              # ScriptableObject assets
 │       ├── LoggerConfig.cs
@@ -46,7 +45,7 @@ YLogger/
 ---
 
 ## Usage Notes
-
+* WebGL is not currently supported
 * Only enable encryption in production if security is needed.
 * Auto-cleaning and uploading should be toggled according to your release process.
 * Logs are stored under `Application.persistentDataPath/Logs/`.
