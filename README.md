@@ -41,12 +41,12 @@ YLogger/
 ## 使用说明
 
 1. 将 `YLogger/` 拖入你的 Unity 项目
-2. 在场景中添加 `LogInitializer` 脚本或调用 `Logger.Initialize()` 进行初始化
+2. 在场景中调用 `Logger.Initialize()` 进行初始化
 3. （可选）编辑 `LoggerSettings.asset` 或通过 `Tools/日志设置` 面板修改配置
 4. 在需要的地方使用 `Logger.Log/Logger.LogError` 等方法进行日志记录
 
 ## 注意事项
-
+* **平台选择**：暂不支持WebGL
 * **日志位置**：所有日志默认写入 `Application.persistentDataPath/Logs/`
 * **编辑器测试**：Editor 模式下默认启用控制台输出，Play 模式模拟移动端行为
 * **自动清理**：配置中开启 `AutoCleanOldLogs` 会自动删除 7 天前的日志
