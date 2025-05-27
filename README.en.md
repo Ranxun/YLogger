@@ -1,3 +1,4 @@
+🌐 [中文文档](README.md)
 YLogger Logging System
 
 YLogger is a lightweight logging and viewing solution for Unity projects. It supports runtime file logging, in-game and editor log viewing, log uploading, encryption, and configuration.
