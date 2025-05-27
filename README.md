@@ -39,7 +39,7 @@ YLogger/
 │   ├── LoggerPanel.prefab          # LoggerPanel 的 UGUI 预制体
 │   └── LoggerSettings.asset        # 配置实例文件（放置在 Resources 以供运行时加载）
 
-## 📌 注意事项
+  ## 📌 注意事项
 - 文件日志写入路径为：Application.persistentDataPath/Logs/
 - 日志文件每日生成，按等级命名（如：log_2025-05-27.log）
 - LoggerSettings.asset 为全局控制开关，请勿遗漏
